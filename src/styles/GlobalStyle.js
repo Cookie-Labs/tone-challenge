@@ -143,7 +143,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
   }
 
-  html{
+  /* html{
     ${web`
       font-size: 16px;
     `}
@@ -155,7 +155,7 @@ const GlobalStyle = createGlobalStyle`
     ${mobile`
       font-size: 10px;
     `}
-  }
+  } */
 
   body {
     font-size: 1.2rem;

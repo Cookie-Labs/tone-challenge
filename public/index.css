@@ -1,5 +1,5 @@
 body {
-  background-color: #F7F7F7;
+  background-color: #000000;
 }
 
 #root:not(:empty) ~ #loading {
@@ -12,5 +12,5 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F7F7F7;
+  background-color: #000000;
 }

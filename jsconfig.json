@@ -13,8 +13,7 @@
       "@utils/*": ["./src/utils/*"],
       "@pages/*": ["./src/components/pages/*"],
       "@atoms/*": ["./src/components/atoms/*"],
-      "@articles/*": ["./src/components/articles/*"],
-      "@layouts/*": ["./src/components/layouts/*"],
+      "@articles/*": ["./src/components/articles/*"]
     }
   },
   "exclude": ["node_modules", "build"]

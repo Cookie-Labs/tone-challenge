@@ -1,2 +1,2 @@
-export const TOP_NAV_HEIGHT = '3.75rem';
-export const FOOTER_H = '15.9375rem';
+export const FOOTER_HEIGHT = '80px';
+export const LAYOUT_WIDTH = '400px';
