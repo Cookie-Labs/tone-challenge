@@ -1,15 +1,21 @@
-import { Address } from 'ton';
 
-export default function useTon() {
-  async function getWallet(_walletAddress) {
-    const wallet = Address.parse(_walletAddress);
-    return wallet;
-  }
+// import {getHttpEndpoint} from '@orbs-network/ton-access';
+// import { config } from 'dotenv';
+// import {TonClient} from "Ton"
+// // ton-core {Address , Cell, toNano}
+// // TonClient {TonClient}
+// // import {useAsyncInitialize} from './useAsync'
+// // import {config} from './config'
 
-  async function getCollection(_collectionAddress) {
-    const collection = Address.parse(_collectionAddress);
-    return collection;
-  }
-
-  return { getWallet, getCollection };
-}
+// export function useTon() {
+//   return useAsync(
+//     async () =>
+//       new TonClient({
+//         endpoint: await getHttpEndpoint(
+//           {
+//             // network: config.TON_CHAIN as any,
+//           }
+//         )
+//       })
+//   )
+// }
