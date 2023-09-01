@@ -1,12 +1,36 @@
+// eslint-disable-next-line
+import { DeLabEvent, DeLabNetwork } from '@delab-team/connect';
 import { createElement, useEffect, useState } from 'react';
 
+/**
+ * @typedef {import("@delab-team/connect").DeLabNetwork} DeLabNetwork
+ * @typedef {import("react").ReactNode} ReactNode
+ * @typedef {import("@delab-team/connect").DeLabEvent} DeLabEvent
+ * @typedef {import("@delab-team/connect").DeLabConnect} DeLabConnect
+ * @typedef {object} ConnectInfo
+ * @property {string} url
+ * @property {string} name
+ * @property {DeLabNetwork} network
+ * @typedef {object} Callbacks
+ * @property {(event: DeLabEvent) => void} [onConnect]
+ * @property {() => void} [onDisconnect]
+ * @property {(event: DeLabEvent) => void} [onApproveLink]
+ * @property {(event: DeLabEvent) => void} [onError]
+ * @property {(event: DeLabEvent) => void} [onErrorTransaction]
+ * @property {(event: DeLabEvent) => void} [onErrorTonCoinWallet]
+ * @property {(event: DeLabEvent) => void} [onErrorTonhub]
+ * @property {(event: DeLabEvent) => void} [onErrorTonkeeper]
+ *
+ * @param {{ connectInfo: ConnectInfo, callbacks: Callbacks }} props
+ * @returns {{ DeLabConnector: DeLabConnect, DeLabModal: ReactNode, DeLabButton: ReactNode }}
+ */
 export const useDeLab = (props) => {
   const [DeLabConnector, setDeLabConnector] = useState();
   const [DeLabModal, setDeLabModal] = useState(null);
   const [DeLabButton, setDeLabButton] = useState(null);
 
   useEffect(() => {
-    async function setDeLab() {
+    (async () => {
       if (typeof window !== 'undefined') {
         const DeLab = await import('@delab-team/connect');
         const DeLabConnector = new DeLab.DeLabConnect(
@@ -63,9 +87,7 @@ export const useDeLab = (props) => {
 
         DeLabConnector.loadWallet();
       }
-    }
-
-    setDeLab();
+    })();
     // eslint-disable-next-line
   }, []);
 

@@ -1,14 +1,19 @@
 import { useState } from 'react';
 import { useDeLab } from '@hooks/useDeLab';
+import {
+  // eslint-disable-next-line
+  DeLabConnecting,
+  // eslint-disable-next-line
+  DeLabEvent,
+  // eslint-disable-next-line
+  DeLabTransaction,
+} from '@delab-team/connect';
 import styled from 'styled-components';
 import { formatAddress } from '@utils/parser';
 import { useNavigate } from 'react-router-dom';
 import { BiArrowBack, BiWalletAlt, BiX } from 'react-icons/bi';
 import { useRecoilState } from 'recoil';
-import {
-  userAccount,
-  userNetworkType,
-} from '@states/userState';
+import { userAccount, userNetworkType } from '@states/userState';
 
 const Container = styled.div`
   width: 100%;
